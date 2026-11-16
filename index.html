@@ -444,6 +444,94 @@
       letter-spacing: 1px;
     }
 
+    .facility {
+      background: var(--paper);
+    }
+
+    .facility-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .facility-card {
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ece5dc;
+      box-shadow: 0 8px 26px rgba(34, 39, 31, .04);
+    }
+
+    .facility-photo {
+      aspect-ratio: 4 / 3;
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(201,169,110,.18), transparent 32%),
+        linear-gradient(135deg, #eeeae2, #dfd9cf);
+      border: 1px dashed rgba(23,37,31,.2);
+    }
+
+    .facility-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(135deg, transparent 0 16px, rgba(255,255,255,.16) 16px 17px);
+      pointer-events: none;
+    }
+
+    .facility-placeholder {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      color: #72766d;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .facility-placeholder-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: #9c8050;
+      border: 1px solid rgba(156,128,80,.5);
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: 300;
+    }
+
+    .facility-caption {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 4px 10px;
+      padding: 14px 4px 5px;
+    }
+
+    .facility-index {
+      grid-row: span 2;
+      padding-top: 1px;
+      color: #9c8050;
+      font-family: Georgia, serif;
+      font-size: 12px;
+    }
+
+    .facility-caption h3 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .facility-caption p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
     .cases-grid {
       display: grid;
       gap: 12px;
@@ -720,6 +808,11 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .facility-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
       .case-visual {
         height: 220px;
       }
@@ -780,6 +873,7 @@
     <nav class="main-nav" aria-label="主导航">
       <a href="#about">关于我们</a>
       <a href="#culture">企业文化</a>
+      <a href="#facility">工厂实景</a>
       <a href="#products">产品中心</a>
       <a href="#contact">联系我们</a>
     </nav>
@@ -868,6 +962,52 @@
           <strong>全程</strong>
           <span>沟通与跟进</span>
         </div>
+      </div>
+    </section>
+
+    <section class="section facility" id="facility" aria-label="企业实景照片展示区">
+      <h2 class="section-heading">走进北星</h2>
+      <p class="section-subtitle">企业环境、生产设备与车间现场，展示真实生产实力</p>
+      <div class="facility-grid">
+        <article class="facility-card">
+          <div class="facility-photo">
+            <div class="facility-placeholder">
+              <span class="facility-placeholder-icon" aria-hidden="true">+</span>
+              <span>照片展示位</span>
+            </div>
+          </div>
+          <div class="facility-caption">
+            <span class="facility-index">01</span>
+            <h3>企业环境</h3>
+            <p>公司外观、办公环境与园区全景</p>
+          </div>
+        </article>
+        <article class="facility-card">
+          <div class="facility-photo">
+            <div class="facility-placeholder">
+              <span class="facility-placeholder-icon" aria-hidden="true">+</span>
+              <span>照片展示位</span>
+            </div>
+          </div>
+          <div class="facility-caption">
+            <span class="facility-index">02</span>
+            <h3>生产设备</h3>
+            <p>印刷、复合、制袋与检测设备</p>
+          </div>
+        </article>
+        <article class="facility-card">
+          <div class="facility-photo">
+            <div class="facility-placeholder">
+              <span class="facility-placeholder-icon" aria-hidden="true">+</span>
+              <span>照片展示位</span>
+            </div>
+          </div>
+          <div class="facility-caption">
+            <span class="facility-index">03</span>
+            <h3>生产车间</h3>
+            <p>洁净车间、生产线与工作现场</p>
+          </div>
+        </article>
       </div>
     </section>
 
