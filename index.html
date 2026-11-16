@@ -336,10 +336,28 @@
         #eeece5;
     }
 
-    .product-art svg {
+    .product-art img {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 10px 8px rgba(27, 35, 29, .15));
+      display: block;
+      object-fit: cover;
+    }
+
+    .image-credit {
+      position: absolute;
+      right: 9px;
+      bottom: 9px;
+      z-index: 1;
+      padding: 5px 8px;
+      color: rgba(255,255,255,.92);
+      background: rgba(23,37,31,.64);
+      font-size: 9px;
+      letter-spacing: .3px;
+      transition: background .2s ease;
+    }
+
+    .image-credit:hover {
+      background: rgba(23,37,31,.88);
     }
 
     .product-info {
@@ -438,7 +456,7 @@
     }
 
     .case-visual {
-      height: 118px;
+      height: 180px;
       margin-bottom: 12px;
       background:
         linear-gradient(135deg, rgba(23,37,31,.15), rgba(201,169,110,.08)),
@@ -447,29 +465,19 @@
       overflow: hidden;
     }
 
-    .case-visual::before,
+    .case-visual img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
     .case-visual::after {
       content: "";
       position: absolute;
-      border-radius: 18px;
-      background: rgba(255,255,255,.7);
-      border: 1px solid rgba(23,37,31,.06);
-    }
-
-    .case-visual::before {
-      width: 88px;
-      height: 62px;
-      left: 18px;
-      bottom: 18px;
-      transform: rotate(-12deg);
-    }
-
-    .case-visual::after {
-      width: 100px;
-      height: 70px;
-      right: 18px;
-      bottom: 14px;
-      transform: rotate(8deg);
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(23,37,31,.18));
+      pointer-events: none;
     }
 
     .case-tag {
@@ -712,6 +720,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .case-visual {
+        height: 220px;
+      }
+
       .stats-grid {
         max-width: 780px;
       }
@@ -861,16 +873,22 @@
 
     <section class="section cases">
       <h2 class="section-heading">应用方案</h2>
-      <p class="section-subtitle">以下为常见包装应用方向，可根据实际产品需求沟通定制</p>
+      <p class="section-subtitle">常见包装应用方向，图片为公开图库示意参考</p>
       <div class="cases-grid">
         <article class="case-card">
-          <div class="case-visual"></div>
+          <div class="case-visual">
+            <img src="pouch-white.jpg" alt="白色自立拉链袋包装参考图" loading="lazy">
+            <a class="image-credit" href="https://www.pexels.com/photo/two-stand-up-zipper-pouch-on-white-surface-12024976/" target="_blank" rel="noopener noreferrer">图片来源：Pexels</a>
+          </div>
           <div class="case-tag">食品包装</div>
           <h3>食品软包装</h3>
           <p>结合产品保存、使用方式与品牌展示需求，沟通适配的袋型、材质与印刷方案。</p>
         </article>
         <article class="case-card">
-          <div class="case-visual"></div>
+          <div class="case-visual">
+            <img src="pouch-green.jpg" alt="绿色可封口包装袋参考图" loading="lazy">
+            <a class="image-credit" href="https://www.pexels.com/photo/minimalist-design-of-packaging-16100293/" target="_blank" rel="noopener noreferrer">图片来源：Pexels</a>
+          </div>
           <div class="case-tag">日化包装</div>
           <h3>日化产品包装</h3>
           <p>围绕产品特性与陈列场景，匹配包装结构和视觉呈现，兼顾实用与辨识度。</p>
@@ -882,7 +900,7 @@
       <div class="product-heading-row">
         <div>
           <h2 class="section-heading">精选袋型</h2>
-          <p class="section-subtitle">点击袋型，查看对应包装展示</p>
+          <p class="section-subtitle">点击袋型，查看包装图片示意与产品说明</p>
         </div>
         <span class="product-count">01 — 04</span>
       </div>
@@ -965,20 +983,20 @@
   <script>
     const products = {
       octagon: [
-        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", color: "#d9c9a7" },
-        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", color: "#728477" }
+        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图", source: "https://www.pexels.com/photo/two-stand-up-zipper-pouch-on-white-surface-12024976/" },
+        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图", source: "https://www.pexels.com/photo/minimalist-design-of-packaging-16100293/" }
       ],
       "three-side": [
-        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", color: "#d8c6a5" },
-        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", color: "#829080" }
+        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图", source: "https://www.pexels.com/photo/paper-bag-on-white-background-12039675/" },
+        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "pouch-coffee.jpg", alt: "咖啡包装袋与冲煮场景参考图", source: "https://www.pexels.com/photo/coffee-beans-spill-over-the-wooden-table-8004546/" }
       ],
       "back-seal": [
-        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", color: "#d5c4a4" },
-        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", color: "#798a7e" }
+        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图", source: "https://www.pexels.com/photo/paper-bag-on-white-background-12039675/" },
+        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "pouch-refill.jpg", alt: "日化用品与袋型包装参考图", source: "https://www.pexels.com/photo/a-pouch-in-the-box-beside-a-plastic-bottle-8015893/" }
       ],
       "stand-up": [
-        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", color: "#d9c6a1" },
-        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", color: "#7d8b7c" }
+        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图", source: "https://www.pexels.com/photo/two-stand-up-zipper-pouch-on-white-surface-12024976/" },
+        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图", source: "https://www.pexels.com/photo/minimalist-design-of-packaging-16100293/" }
       ]
     };
 
@@ -989,72 +1007,13 @@
       "stand-up": "自立袋包装"
     };
 
-    function createBagSvg(type, color, index) {
-      const id = `${type.replace("-", "")}-${index}`;
-      let shape = "";
-
-      if (type === "octagon") {
-        shape = `
-          <path d="M66 31 L82 22 H138 L154 31 L165 43 V166 L154 178 H66 L55 166 V43 Z"/>
-          <path class="seam" d="M66 38 L80 30 H140 L154 38 M62 47 V163 L69 171 M158 47 V163 L151 171"/>
-          <path class="detail" d="M64 54 H156"/>
-        `;
-      } else if (type === "three-side") {
-        shape = `
-          <path d="M58 28 H162 V178 H58 Z"/>
-          <path class="seam" d="M64 35 H156 M64 171 H156 M65 38 V168 M155 38 V168"/>
-        `;
-      } else if (type === "back-seal") {
-        shape = `
-          <path d="M65 27 H155 L160 178 H60 Z"/>
-          <path class="seam" d="M70 34 H150 M67 171 H153"/>
-          <path class="detail" d="M108 38 V168"/>
-        `;
-      } else {
-        shape = `
-          <path d="M62 35 L73 26 H147 L158 35 V157 L145 165 L139 178 H81 L75 165 L62 157 Z"/>
-          <path class="seam" d="M68 42 H152 M68 151 H152 M82 169 H138"/>
-          <path class="detail" d="M68 53 V148 M152 53 V148"/>
-        `;
-      }
-
-      return `
-        <svg viewBox="0 0 220 205" role="img" aria-label="${labels[type]}示意图">
-          <defs>
-            <linearGradient id="${id}-fill" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#fff" stop-opacity=".96"/>
-              <stop offset=".45" stop-color="${color}"/>
-              <stop offset="1" stop-color="#7d806e"/>
-            </linearGradient>
-            <linearGradient id="${id}-shine" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#fff" stop-opacity=".36"/>
-              <stop offset=".5" stop-color="#fff" stop-opacity=".04"/>
-              <stop offset="1" stop-color="#fff" stop-opacity=".22"/>
-            </linearGradient>
-          </defs>
-          <g fill="url(#${id}-fill)" stroke="#fff" stroke-opacity=".72" stroke-width="1">
-            ${shape}
-          </g>
-          <g fill="url(#${id}-shine)" stroke="none">
-            ${shape}
-          </g>
-          <g fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="1">
-            <path class="seam"/>
-          </g>
-          <text x="110" y="91" text-anchor="middle" fill="#fff" font-size="8" letter-spacing="2">NORTH STAR</text>
-          <path d="M88 99 H132" stroke="#fff" stroke-opacity=".65"/>
-          <text x="110" y="116" text-anchor="middle" fill="#fff" font-size="12" font-family="serif" letter-spacing="2">包装之美</text>
-          <text x="110" y="130" text-anchor="middle" fill="#fff" fill-opacity=".85" font-size="5" letter-spacing="1.5">QUALITY PACKAGING</text>
-        </svg>
-      `;
-    }
-
     function renderProducts(type) {
       const grid = document.getElementById("productGrid");
-      grid.innerHTML = products[type].map((product, index) => `
+      grid.innerHTML = products[type].map((product) => `
         <article class="product-card">
           <div class="product-art">
-            ${createBagSvg(type, product.color, index)}
+            <img src="${product.image}" alt="${product.alt}" loading="lazy">
+            <a class="image-credit" href="${product.source}" target="_blank" rel="noopener noreferrer">图片来源：Pexels</a>
           </div>
           <div class="product-info">
             <div class="product-type">${labels[type]}</div>
