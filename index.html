@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251f">
+  <meta name="description" content="北星包装专注塑料软包装设计与定制，提供袋型设计、材质印刷沟通及生产交付服务。">
+  <title>北星包装｜高端包装定制</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #17251f;
+      --green-light: #263a30;
+      --gold: #c9a96e;
+      --paper: #f7f5f0;
+      --text: #252b27;
+      --muted: #858980;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0 auto;
+      color: var(--text);
+      background: #fff;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 62px;
+      padding: 0 max(22px, calc((100vw - 1160px) / 2));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      background: var(--gold);
+      border-radius: 50%;
+      font-family: serif;
+      font-size: 17px;
+    }
+
+    .top-link {
+      color: #e2d5bd;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .main-nav {
+      display: none;
+      align-items: center;
+      gap: 30px;
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+    }
+
+    .main-nav a:hover,
+    .top-link:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 490px;
+      padding: 76px max(25px, calc((100vw - 1080px) / 2)) 54px;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 82% 73%, rgba(201,169,110,.17), transparent 35%),
+        linear-gradient(145deg, #1d3027, #101b16);
+    }
+
+    .hero::before {
+      content: "";
+      width: 270px;
+      height: 270px;
+      position: absolute;
+      right: -120px;
+      top: 60px;
+      border: 1px solid rgba(201,169,110,.26);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(201,169,110,.04),
+                  0 0 0 70px rgba(201,169,110,.03);
+    }
+
+    .hero-kicker {
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 4px;
+    }
+
+    .hero h1 {
+      margin-bottom: 18px;
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      max-width: 300px;
+      color: rgba(255,255,255,.7);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 24px;
+      padding: 12px 17px;
+      border: 1px solid rgba(201,169,110,.75);
+      color: #e9d8b8;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero-button span {
+      font-size: 18px;
+    }
+
+    .hero-caption {
+      margin-top: 35px;
+      color: rgba(255,255,255,.36);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    .section {
+      padding: 64px max(21px, calc((100vw - 1080px) / 2));
+    }
+
+    .section-heading {
+      margin-bottom: 8px;
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .intro {
+      background: var(--paper);
+    }
+
+    .intro-card {
+      padding: 20px;
+      background: #fff;
+      border-left: 2px solid var(--gold);
+      box-shadow: 0 8px 26px rgba(34, 39, 31, .04);
+    }
+
+    .intro-card p {
+      color: #666b63;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .intro-note {
+      margin-top: 15px;
+      color: #9c8050;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .culture {
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 100% 0, rgba(201,169,110,.12), transparent 38%),
+        var(--green);
+    }
+
+    .culture .section-subtitle {
+      color: rgba(255,255,255,.58);
+    }
+
+    .culture-intro {
+      max-width: 690px;
+      margin-bottom: 28px;
+      color: rgba(255,255,255,.76);
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .culture-values {
+      display: grid;
+      gap: 12px;
+    }
+
+    .culture-values .culture-value {
+      min-width: 0;
+    }
+
+    .culture-value {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.025);
+    }
+
+    .culture-value span {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .culture-value h3 {
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .culture-value p {
+      color: rgba(255,255,255,.58);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .products {
+      background: #fff;
+    }
+
+    .product-heading-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+    }
+
+    .product-count {
+      padding-bottom: 10px;
+      color: #a38a5f;
+      font-family: Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .category-list {
+      display: flex;
+      gap: 9px;
+      margin: 20px 0 18px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-button {
+      flex: 0 0 auto;
+      padding: 9px 14px;
+      border: 1px solid #e8e5de;
+      border-radius: 2px;
+      color: #75796f;
+      background: #fff;
+      font-size: 12px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .category-button.active {
+      border-color: var(--green);
+      color: #fff;
+      background: var(--green);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .product-card {
+      min-width: 0;
+      padding: 12px;
+      background: #f8f7f3;
+    }
+
+    .product-art {
+      height: 175px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 77%, rgba(37, 43, 35, .1), transparent 42%),
+        #eeece5;
+    }
+
+    .product-art svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 10px 8px rgba(27, 35, 29, .15));
+    }
+
+    .product-info {
+      padding: 13px 2px 3px;
+    }
+
+    .product-type {
+      margin-bottom: 5px;
+      color: #a38a5f;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 {
+      margin-bottom: 6px;
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .service-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .service-card {
+      padding: 18px 16px 16px;
+      background: var(--paper);
+      border: 1px solid #ece7df;
+    }
+
+    .service-card span {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .stat-card {
+      padding: 14px 10px;
+      border: 1px solid #eae3d8;
+      background: #fff;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      color: var(--green);
+      font-size: 18px;
+      font-family: Georgia, serif;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .cases-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .case-card {
+      padding: 14px;
+      background: linear-gradient(180deg, #fff 0%, #f8f5f0 100%);
+      border: 1px solid #ece5dc;
+    }
+
+    .case-visual {
+      height: 118px;
+      margin-bottom: 12px;
+      background:
+        linear-gradient(135deg, rgba(23,37,31,.15), rgba(201,169,110,.08)),
+        #e7e2d8;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-visual::before,
+    .case-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 18px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid rgba(23,37,31,.06);
+    }
+
+    .case-visual::before {
+      width: 88px;
+      height: 62px;
+      left: 18px;
+      bottom: 18px;
+      transform: rotate(-12deg);
+    }
+
+    .case-visual::after {
+      width: 100px;
+      height: 70px;
+      right: 18px;
+      bottom: 14px;
+      transform: rotate(8deg);
+    }
+
+    .case-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #9b804f;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .case-card h3 {
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .advantages {
+      color: #fff;
+      background: var(--green);
+    }
+
+    .advantages .section-subtitle {
+      color: rgba(255,255,255,.55);
+    }
+
+    .advantage-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .advantage-item {
+      display: flex;
+      gap: 14px;
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .advantage-number {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 18px;
+    }
+
+    .advantage-item h3 {
+      margin-bottom: 5px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .advantage-item p {
+      color: rgba(255,255,255,.55);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .process {
+      padding: 48px max(20px, calc((100vw - 1080px) / 2));
+      background: var(--paper);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+
+    .step-number {
+      width: 31px;
+      height: 31px;
+      margin: 0 auto 9px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: #9d7e4c;
+      font-family: Georgia, serif;
+      font-size: 11px;
+    }
+
+    .step-name {
+      color: #676b63;
+      font-size: 10px;
+    }
+
+    .contact {
+      margin: 0 20px 28px;
+      padding: 25px 22px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 100% 0, rgba(201,169,110,.22), transparent 40%),
+        var(--green-light);
+    }
+
+    .contact h2 {
+      margin-bottom: 10px;
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 21px;
+      font-weight: 500;
+    }
+
+    .contact p {
+      margin-bottom: 18px;
+      color: rgba(255,255,255,.65);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .contact-meta {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+      color: rgba(255,255,255,.8);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .contact-meta strong {
+      display: inline-block;
+      min-width: 42px;
+      color: #f2dfba;
+      font-weight: 500;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--gold);
+      color: #e5d1ad;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .contact-button.secondary {
+      border-color: rgba(255,255,255,.45);
+      color: #fff;
+      background: rgba(255,255,255,.03);
+    }
+
+    .sticky-cta {
+      position: sticky;
+      bottom: 0;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 10px 16px 14px;
+      background: rgba(247,245,240,.94);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(23,37,31,.08);
+    }
+
+    .sticky-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .sticky-cta a:first-child {
+      color: #fff;
+      background: var(--green);
+    }
+
+    .sticky-cta a:last-child {
+      color: var(--green);
+      border: 1px solid rgba(23,37,31,.18);
+      background: #fff;
+    }
+
+    footer {
+      padding: 24px max(15px, calc((100vw - 1080px) / 2)) 78px;
+      color: #8d9189;
+      background: #f1efe9;
+      text-align: left;
+      font-size: 10px;
+      line-height: 1.9;
+    }
+
+    footer p + p {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 360px) {
+      .product-art {
+        height: 150px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .main-nav {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 570px;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        max-width: 420px;
+        font-size: 14px;
+      }
+
+      .intro-card {
+        max-width: 850px;
+        padding: 30px 34px;
+      }
+
+      .culture-values,
+      .service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .cases-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stats-grid {
+        max-width: 780px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .product-art {
+        height: 220px;
+      }
+
+      .advantage-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .steps {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .contact {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 38px 42px;
+      }
+
+      .contact h2 {
+        font-size: 28px;
+      }
+
+      .sticky-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 699px) {
+      .sticky-cta {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">北</span>
+      <span>北星包装</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#about">关于我们</a>
+      <a href="#culture">企业文化</a>
+      <a href="#products">产品中心</a>
+      <a href="#contact">联系我们</a>
+    </nav>
+    <a class="top-link" href="#contact">商务咨询　＋</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-kicker">BEIXING PACKAGING</div>
+      <h1>以匠心之名<br>塑造包装之美</h1>
+      <p>专注塑料软包装设计与定制，以细致工艺与品质管理，为产品打造恰如其分的包装表达。</p>
+      <a class="hero-button" href="#products">探索产品 <span>→</span></a>
+      <div class="hero-caption">DESIGN · QUALITY · SERVICE</div>
+    </section>
+
+    <section class="section intro" id="about">
+      <h2 class="section-heading">关于北星</h2>
+      <p class="section-subtitle">用专业与细节，回应每一份包装需求</p>
+      <div class="intro-card">
+        <p>
+          东光县北星包装材料有限公司是一家集研发、设计、生产和销售于一体的科技型软包装制造公司，具有20多年的生产销售经验。生产基地位于河北省东光县京南科技示范园区，占地面积18000平方米，公司拥有10万级净化车间10000余平方米。
+公司主要生产各种食品包装、日用品包装、动物食药包装以及具有各种特殊性能的功能性包装制品。拥有4条10色电子轴高速印刷生产线，可变二维码印刷设备2套。为满足不同功能客户的需求，我们配备干式复合生产线2条、无溶剂复合生产线5条。同时为适配各类材质固化、熟化需求我们拥有10个不同温控湿控熟化室10个。配备3台高速分切机，和各种袋型高精度高速制袋机32台，可实现日产30吨卷膜和300万袋，年产值超1.5亿人民币。为保证产品质量公司引进包括检品机、七项色谱仪。色差仪、密封性实验仪、摩擦系数仪、拉力系数仪、薄膜冲击实验仪在内的全套产业检测设备。为了实现绿色环保持续发展，公司首创斥巨资引进全套空气净化设备，实现0排放。同时公司每年将产值的5%作为研发基金，与各大院校合作致力于可回收可降解新材质的研发推广。
+        </p>
+        <div class="intro-note">专注包装 · 用心做好每一袋</div>
+      </div>
+    </section>
+
+    <section class="section culture" id="culture">
+      <h2 class="section-heading">企业文化</h2>
+      <p class="section-subtitle">以品质立足，以协作共进，让每一份包装承载信任</p>
+      <p class="culture-intro">北星包装相信，好的包装不止于外观，更来自对产品需求的理解、对生产细节的认真，以及对每一次合作的负责。</p>
+      <div class="culture-values">
+        <article class="culture-value">
+          <span>OUR MISSION</span>
+          <h3>使命 · 让包装更有价值</h3>
+          <p>从使用需求出发，持续打磨包装的实用性、呈现效果与生产可行性。</p>
+        </article>
+        <article class="culture-value">
+          <span>OUR VISION</span>
+          <h3>愿景 · 成为值得信赖的伙伴</h3>
+          <p>以稳定沟通与认真交付，陪伴客户完善产品包装方案。</p>
+        </article>
+        <article class="culture-value">
+          <span>OUR VALUES</span>
+          <h3>价值观 · 诚信、品质、协作</h3>
+          <p>诚恳面对需求，重视每一道工序，与客户和团队共同把事情做好。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section service-showcase">
+      <h2 class="section-heading">我们的服务</h2>
+      <p class="section-subtitle">从结构设计到生产交付，提供一站式包装解决方案</p>
+      <div class="service-grid">
+        <article class="service-card">
+          <span>01</span>
+          <h3>包装结构设计</h3>
+          <p>结合产品特性、销售场景与展示需求，打造适配的包装形式与尺寸方案。</p>
+        </article>
+        <article class="service-card">
+          <span>02</span>
+          <h3>印刷与材质沟通</h3>
+          <p>根据品牌定位和视觉要求，匹配材质、颜色、印刷工艺与表面效果。</p>
+        </article>
+        <article class="service-card">
+          <span>03</span>
+          <h3>生产与交付跟进</h3>
+          <p>从打样、确认到批量生产，全程沟通并紧跟订单节奏，保障交付质量。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading">业务覆盖</h2>
+      <p class="section-subtitle">为食品、日化、保健品与零售品类提供适配包装方案</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <strong>多类</strong>
+          <span>袋型选择</span>
+        </div>
+        <div class="stat-card">
+          <strong>定制</strong>
+          <span>规格与印刷</span>
+        </div>
+        <div class="stat-card">
+          <strong>全程</strong>
+          <span>沟通与跟进</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cases">
+      <h2 class="section-heading">应用方案</h2>
+      <p class="section-subtitle">以下为常见包装应用方向，可根据实际产品需求沟通定制</p>
+      <div class="cases-grid">
+        <article class="case-card">
+          <div class="case-visual"></div>
+          <div class="case-tag">食品包装</div>
+          <h3>食品软包装</h3>
+          <p>结合产品保存、使用方式与品牌展示需求，沟通适配的袋型、材质与印刷方案。</p>
+        </article>
+        <article class="case-card">
+          <div class="case-visual"></div>
+          <div class="case-tag">日化包装</div>
+          <h3>日化产品包装</h3>
+          <p>围绕产品特性与陈列场景，匹配包装结构和视觉呈现，兼顾实用与辨识度。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="product-heading-row">
+        <div>
+          <h2 class="section-heading">精选袋型</h2>
+          <p class="section-subtitle">点击袋型，查看对应包装展示</p>
+        </div>
+        <span class="product-count">01 — 04</span>
+      </div>
+
+      <div class="category-list" role="group" aria-label="选择包装袋型">
+        <button class="category-button active" type="button" data-type="octagon" aria-pressed="true">八边封</button>
+        <button class="category-button" type="button" data-type="three-side" aria-pressed="false">三边封</button>
+        <button class="category-button" type="button" data-type="back-seal" aria-pressed="false">背封袋</button>
+        <button class="category-button" type="button" data-type="stand-up" aria-pressed="false">自立袋</button>
+      </div>
+
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section advantages">
+      <h2 class="section-heading">品质与服务</h2>
+      <p class="section-subtitle">认真对待从需求沟通到产品交付的每一步</p>
+      <div class="advantage-list">
+        <article class="advantage-item">
+          <span class="advantage-number">01</span>
+          <div>
+            <h3>袋型灵活选择</h3>
+            <p>结合产品特点与使用场景，沟通适合的包装形式。</p>
+          </div>
+        </article>
+        <article class="advantage-item">
+          <span class="advantage-number">02</span>
+          <div>
+            <h3>支持定制沟通</h3>
+            <p>可围绕尺寸、材质、印刷及打样需求进行方案确认。</p>
+          </div>
+        </article>
+        <article class="advantage-item">
+          <span class="advantage-number">03</span>
+          <div>
+            <h3>关注生产细节</h3>
+            <p>重视生产过程与订单沟通，按确认方案推进交付。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2 class="section-heading">合作流程</h2>
+      <p class="section-subtitle">清晰沟通，让合作更简单</p>
+      <div class="steps">
+        <div><span class="step-number">01</span><span class="step-name">需求沟通</span></div>
+        <div><span class="step-number">02</span><span class="step-name">方案确认</span></div>
+        <div><span class="step-number">03</span><span class="step-name">生产跟进</span></div>
+        <div><span class="step-number">04</span><span class="step-name">订单交付</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact">
+        <h2>为您的产品<br>定制合适的包装</h2>
+        <p>欢迎联系北星包装，沟通袋型、规格、材质与印刷需求，获取专属包装方案。</p>
+        <ul class="contact-meta">
+          <li><strong>电 话</strong>：17692790007</li>
+          <li><strong>邮 箱</strong>：3274129186@qq.com</li>
+          <li><strong>地 址</strong>：河北省沧州市东光县京南科技示范园北星包装材料有限公司</li>
+        </ul>
+        <div class="contact-row">
+          <a class="contact-button" href="#contact">联系咨询　→</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>北星包装 · 塑料软包装定制服务</p>
+    <!-- <p>地址与联系方式请补充为企业真实信息</p> -->
+  </footer>
+
+  <div class="sticky-cta">
+    <a href="#contact">联系咨询</a>
+    <a href="#products">查看产品</a>
+  </div>
+
+  <script>
+    const products = {
+      octagon: [
+        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", color: "#d9c9a7" },
+        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", color: "#728477" }
+      ],
+      "three-side": [
+        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", color: "#d8c6a5" },
+        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", color: "#829080" }
+      ],
+      "back-seal": [
+        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", color: "#d5c4a4" },
+        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", color: "#798a7e" }
+      ],
+      "stand-up": [
+        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", color: "#d9c6a1" },
+        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", color: "#7d8b7c" }
+      ]
+    };
+
+    const labels = {
+      octagon: "八边封包装",
+      "three-side": "三边封包装",
+      "back-seal": "背封包装",
+      "stand-up": "自立袋包装"
+    };
+
+    function createBagSvg(type, color, index) {
+      const id = `${type.replace("-", "")}-${index}`;
+      let shape = "";
+
+      if (type === "octagon") {
+        shape = `
+          <path d="M66 31 L82 22 H138 L154 31 L165 43 V166 L154 178 H66 L55 166 V43 Z"/>
+          <path class="seam" d="M66 38 L80 30 H140 L154 38 M62 47 V163 L69 171 M158 47 V163 L151 171"/>
+          <path class="detail" d="M64 54 H156"/>
+        `;
+      } else if (type === "three-side") {
+        shape = `
+          <path d="M58 28 H162 V178 H58 Z"/>
+          <path class="seam" d="M64 35 H156 M64 171 H156 M65 38 V168 M155 38 V168"/>
+        `;
+      } else if (type === "back-seal") {
+        shape = `
+          <path d="M65 27 H155 L160 178 H60 Z"/>
+          <path class="seam" d="M70 34 H150 M67 171 H153"/>
+          <path class="detail" d="M108 38 V168"/>
+        `;
+      } else {
+        shape = `
+          <path d="M62 35 L73 26 H147 L158 35 V157 L145 165 L139 178 H81 L75 165 L62 157 Z"/>
+          <path class="seam" d="M68 42 H152 M68 151 H152 M82 169 H138"/>
+          <path class="detail" d="M68 53 V148 M152 53 V148"/>
+        `;
+      }
+
+      return `
+        <svg viewBox="0 0 220 205" role="img" aria-label="${labels[type]}示意图">
+          <defs>
+            <linearGradient id="${id}-fill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity=".96"/>
+              <stop offset=".45" stop-color="${color}"/>
+              <stop offset="1" stop-color="#7d806e"/>
+            </linearGradient>
+            <linearGradient id="${id}-shine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#fff" stop-opacity=".36"/>
+              <stop offset=".5" stop-color="#fff" stop-opacity=".04"/>
+              <stop offset="1" stop-color="#fff" stop-opacity=".22"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#${id}-fill)" stroke="#fff" stroke-opacity=".72" stroke-width="1">
+            ${shape}
+          </g>
+          <g fill="url(#${id}-shine)" stroke="none">
+            ${shape}
+          </g>
+          <g fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="1">
+            <path class="seam"/>
+          </g>
+          <text x="110" y="91" text-anchor="middle" fill="#fff" font-size="8" letter-spacing="2">NORTH STAR</text>
+          <path d="M88 99 H132" stroke="#fff" stroke-opacity=".65"/>
+          <text x="110" y="116" text-anchor="middle" fill="#fff" font-size="12" font-family="serif" letter-spacing="2">包装之美</text>
+          <text x="110" y="130" text-anchor="middle" fill="#fff" fill-opacity=".85" font-size="5" letter-spacing="1.5">QUALITY PACKAGING</text>
+        </svg>
+      `;
+    }
+
+    function renderProducts(type) {
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = products[type].map((product, index) => `
+        <article class="product-card">
+          <div class="product-art">
+            ${createBagSvg(type, product.color, index)}
+          </div>
+          <div class="product-info">
+            <div class="product-type">${labels[type]}</div>
+            <h3>${product.name}</h3>
+            <p>${product.desc}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    document.querySelectorAll(".category-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".category-button").forEach((item) => {
+          item.classList.remove("active");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+        renderProducts(button.dataset.type);
+      });
+    });
+
+    renderProducts("octagon");
+  </script>
+</body>
+</html>
