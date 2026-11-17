@@ -345,7 +345,7 @@
     }
 
     .product-art {
-      height: 175px;
+      aspect-ratio: 1 / 1;
       display: grid;
       place-items: center;
       overflow: hidden;
@@ -358,7 +358,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .product-info {
@@ -862,10 +862,6 @@
     }
 
     @media (max-width: 360px) {
-      .product-art {
-        height: 150px;
-      }
-
       .hero h1 {
         font-size: 30px;
       }
@@ -973,10 +969,6 @@
       .product-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 18px;
-      }
-
-      .product-art {
-        height: 220px;
       }
 
       .advantage-list {
@@ -1222,7 +1214,7 @@
       <div class="cases-grid">
         <article class="case-card">
           <div class="case-visual">
-            <img src="pouch-white.jpg" alt="白色自立拉链袋包装参考图" loading="lazy">
+            <img src="app-food-pexels-coffee.jpg" alt="咖啡豆、自立袋与手冲器具组成的食品包装参考场景" loading="lazy">
           </div>
           <div class="case-tag">食品包装</div>
           <h3>食品软包装</h3>
@@ -1230,7 +1222,7 @@
         </article>
         <article class="case-card">
           <div class="case-visual">
-            <img src="pouch-green.jpg" alt="绿色可封口包装袋参考图" loading="lazy">
+            <img src="app-care-pixabay-skincare.jpg" alt="护肤产品与植物构成的日化包装应用参考" loading="lazy">
           </div>
           <div class="case-tag">日化包装</div>
           <h3>日化产品包装</h3>
@@ -1327,24 +1319,24 @@
   <script>
     const products = {
       octagon: [
-        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图" },
-        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图" }
+        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "octagon-1.jpg", alt: "多款八边封袋产品实拍图" },
+        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "octagon-2.jpg", alt: "黑色八边封茶叶袋实拍图" }
       ],
       "three-side": [
-        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图" },
-        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "pouch-coffee.jpg", alt: "咖啡包装袋与冲煮场景参考图" }
+        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "three-side-1.jpg", alt: "牛皮纸三边封包装袋实拍图" },
+        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "three-side-2.jpg", alt: "彩色三边封食品包装袋实拍图" }
       ],
       "back-seal": [
-        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图" },
-        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "pouch-refill.jpg", alt: "日化用品与袋型包装参考图" }
+        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "back-seal-1.jpg", alt: "凤梨酥背封袋包装实拍图" },
+        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "back-seal-2.jpg", alt: "背封袋单边与双边封口效果实拍图" }
       ],
       "stand-up": [
-        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图" },
-        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图" }
+        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "stand-up-1.jpg", alt: "彩印自立袋产品实拍图" },
+        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "stand-up-2.jpg", alt: "坚果自立袋产品实拍图" }
       ],
       "die-cut": [
-        { name: "异形模切袋", desc: "可按产品与品牌造型定制轮廓，适合个性化展示。", image: "pouch-white.jpg", alt: "异形模切袋包装参考图" },
-        { name: "定制异形袋", desc: "沟通外形、尺寸与材料，打造差异化包装。", image: "pouch-green.jpg", alt: "定制异形包装袋参考图" }
+        { name: "异形模切袋", desc: "可按产品与品牌造型定制轮廓，适合个性化展示。", image: "die-cut-1.jpg", alt: "坚果造型异形模切袋产品实拍图" },
+        { name: "定制异形袋", desc: "沟通外形、尺寸与材料，打造差异化包装。", image: "die-cut-2.jpg", alt: "动物造型异形模切袋产品实拍图" }
       ]
     };
 
