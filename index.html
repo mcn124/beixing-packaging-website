@@ -473,36 +473,21 @@
       border: 1px dashed rgba(23,37,31,.2);
     }
 
+    .facility-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
     .facility-photo::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(135deg, transparent 0 16px, rgba(255,255,255,.16) 16px 17px);
+      background: linear-gradient(180deg, transparent 60%, rgba(23,37,31,.12));
       pointer-events: none;
-    }
-
-    .facility-placeholder {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 9px;
-      color: #72766d;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    .facility-placeholder-icon {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      color: #9c8050;
-      border: 1px solid rgba(156,128,80,.5);
-      border-radius: 50%;
-      font-size: 22px;
-      font-weight: 300;
     }
 
     .facility-caption {
@@ -971,10 +956,7 @@
       <div class="facility-grid">
         <article class="facility-card">
           <div class="facility-photo">
-            <div class="facility-placeholder">
-              <span class="facility-placeholder-icon" aria-hidden="true">+</span>
-              <span>照片展示位</span>
-            </div>
+            <img src="factory-exterior.jpg" alt="北星包装厂区外观实拍照片" loading="lazy">
           </div>
           <div class="facility-caption">
             <span class="facility-index">01</span>
@@ -984,10 +966,7 @@
         </article>
         <article class="facility-card">
           <div class="facility-photo">
-            <div class="facility-placeholder">
-              <span class="facility-placeholder-icon" aria-hidden="true">+</span>
-              <span>照片展示位</span>
-            </div>
+            <img src="production-equipment.jpg" alt="北星包装印刷生产设备实拍照片" loading="lazy">
           </div>
           <div class="facility-caption">
             <span class="facility-index">02</span>
@@ -997,10 +976,7 @@
         </article>
         <article class="facility-card">
           <div class="facility-photo">
-            <div class="facility-placeholder">
-              <span class="facility-placeholder-icon" aria-hidden="true">+</span>
-              <span>照片展示位</span>
-            </div>
+            <img src="production-workshop.jpg" alt="北星包装生产车间实拍照片" loading="lazy">
           </div>
           <div class="facility-caption">
             <span class="facility-index">03</span>
