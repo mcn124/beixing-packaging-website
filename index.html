@@ -367,31 +367,68 @@
       line-height: 1.7;
     }
 
+    .service-showcase {
+      background: linear-gradient(180deg, var(--paper), #fff);
+    }
+
+    .service-showcase-heading {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .service-kicker {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .service-showcase-heading .section-heading {
+      margin-bottom: 0;
+    }
+
+    .service-showcase-heading .section-subtitle {
+      margin: 8px 0 0;
+    }
+
     .service-grid {
       display: grid;
       gap: 12px;
     }
 
     .service-card {
-      padding: 18px 16px 16px;
-      background: var(--paper);
+      position: relative;
+      padding: 20px 17px 18px;
       border: 1px solid #ece7df;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(34, 39, 31, .035);
     }
 
-    .service-card span {
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 17px;
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .service-card-label {
       display: inline-block;
-      margin-bottom: 10px;
-      color: var(--gold);
-      font-family: Georgia, serif;
-      font-size: 16px;
+      margin-bottom: 12px;
+      color: #94774c;
+      font-size: 10px;
       letter-spacing: 1px;
     }
 
     .service-card h3 {
       margin-bottom: 8px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: .5px;
     }
 
     .service-card p {
@@ -400,31 +437,40 @@
       line-height: 1.8;
     }
 
-    .stats-grid {
+    .coverage-panel {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 18px;
+      gap: 14px;
+      margin-top: 14px;
+      padding: 18px;
+      color: #fff;
+      background: var(--green-light);
     }
 
-    .stat-card {
-      padding: 14px 10px;
-      border: 1px solid #eae3d8;
-      background: #fff;
-      text-align: center;
-    }
-
-    .stat-card strong {
+    .coverage-label {
       display: block;
-      color: var(--green);
-      font-size: 18px;
-      font-family: Georgia, serif;
+      margin-bottom: 6px;
+      color: #e5d1ad;
+      font-size: 10px;
+      letter-spacing: 1.5px;
     }
 
-    .stat-card span {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1px;
+    .coverage-copy h3 {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .coverage-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .coverage-tags span {
+      padding: 6px 10px;
+      border: 1px solid rgba(255,255,255,.28);
+      color: rgba(255,255,255,.88);
+      font-size: 11px;
     }
 
     .facility {
@@ -437,10 +483,7 @@
     }
 
     .facility-card {
-      padding: 10px;
-      background: #fff;
-      border: 1px solid #ece5dc;
-      box-shadow: 0 8px 26px rgba(34, 39, 31, .04);
+      min-width: 0;
     }
 
     .facility-photo {
@@ -450,10 +493,7 @@
       place-items: center;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(201,169,110,.18), transparent 32%),
-        linear-gradient(135deg, #eeeae2, #dfd9cf);
-      border: 1px dashed rgba(23,37,31,.2);
+      background: #eeeae2;
     }
 
     .facility-photo img {
@@ -472,80 +512,6 @@
 
     .facility-carousel img.is-active {
       opacity: 1;
-    }
-
-    .carousel-control {
-      position: absolute;
-      top: 50%;
-      z-index: 2;
-      width: 32px;
-      height: 32px;
-      display: grid;
-      place-items: center;
-      padding: 0;
-      border: 1px solid rgba(255,255,255,.7);
-      border-radius: 50%;
-      color: #fff;
-      background: rgba(23,37,31,.65);
-      font-size: 19px;
-      line-height: 1;
-      cursor: pointer;
-      transform: translateY(-50%);
-    }
-
-    .carousel-control.previous {
-      left: 9px;
-    }
-
-    .carousel-control.next {
-      right: 9px;
-    }
-
-    .carousel-count {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      z-index: 2;
-      padding: 4px 7px;
-      color: #fff;
-      background: rgba(23,37,31,.68);
-      font-size: 10px;
-      letter-spacing: .5px;
-    }
-
-    .facility-photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(23,37,31,.12));
-      pointer-events: none;
-    }
-
-    .facility-caption {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 4px 10px;
-      padding: 14px 4px 5px;
-    }
-
-    .facility-index {
-      grid-row: span 2;
-      padding-top: 1px;
-      color: #9c8050;
-      font-family: Georgia, serif;
-      font-size: 12px;
-    }
-
-    .facility-caption h3 {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .facility-caption p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
     }
 
     .cases-grid {
@@ -826,6 +792,32 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
+      .service-showcase-heading {
+        grid-template-columns: minmax(0, 1.2fr) minmax(250px, .8fr);
+        align-items: end;
+        gap: 26px;
+      }
+
+      .service-showcase-heading .section-subtitle {
+        margin: 0 0 20px;
+        text-align: right;
+      }
+
+      .service-card {
+        min-height: 170px;
+      }
+
+      .coverage-panel {
+        grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+        align-items: center;
+        gap: 24px;
+        padding: 22px 24px;
+      }
+
+      .coverage-tags {
+        justify-content: flex-end;
+      }
+
       .cases-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -837,10 +829,6 @@
 
       .case-visual {
         height: 220px;
-      }
-
-      .stats-grid {
-        max-width: 780px;
       }
 
       .product-grid {
@@ -952,43 +940,41 @@
       </div>
     </section>
 
-    <section class="section service-showcase">
-      <h2 class="section-heading">我们的服务</h2>
-      <p class="section-subtitle">从结构设计到生产交付，提供一站式包装解决方案</p>
+    <section class="section service-showcase" id="services">
+      <div class="service-showcase-heading">
+        <div>
+          <span class="service-kicker">ONE-STOP PACKAGING</span>
+          <h2 class="section-heading">服务能力与业务覆盖</h2>
+        </div>
+        <p class="section-subtitle">从包装结构、印刷材质到生产交付，为多类产品提供一站式定制服务</p>
+      </div>
       <div class="service-grid">
         <article class="service-card">
-          <span>01</span>
+          <span class="service-card-label">结构方案</span>
           <h3>包装结构设计</h3>
-          <p>结合产品特性、销售场景与展示需求，打造适配的包装形式与尺寸方案。</p>
+          <p>结合产品特性和销售场景，沟通适配的袋型与规格。</p>
         </article>
         <article class="service-card">
-          <span>02</span>
+          <span class="service-card-label">材质印刷</span>
           <h3>印刷与材质沟通</h3>
-          <p>根据品牌定位和视觉要求，匹配材质、颜色、印刷工艺与表面效果。</p>
+          <p>匹配基材、颜色和印刷工艺，兼顾外观、保护与使用需求。</p>
         </article>
         <article class="service-card">
-          <span>03</span>
+          <span class="service-card-label">生产交付</span>
           <h3>生产与交付跟进</h3>
-          <p>从打样、确认到批量生产，全程沟通并紧跟订单节奏，保障交付质量。</p>
+          <p>从打样确认到批量生产持续跟进，按确认方案推进交付。</p>
         </article>
       </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-heading">业务覆盖</h2>
-      <p class="section-subtitle">为食品、日化、保健品与零售品类提供适配包装方案</p>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <strong>多类</strong>
-          <span>袋型选择</span>
+      <div class="coverage-panel">
+        <div class="coverage-copy">
+          <span class="coverage-label">业务覆盖</span>
+          <h3>适配多领域产品包装需求</h3>
         </div>
-        <div class="stat-card">
-          <strong>定制</strong>
-          <span>规格与印刷</span>
-        </div>
-        <div class="stat-card">
-          <strong>全程</strong>
-          <span>沟通与跟进</span>
+        <div class="coverage-tags" aria-label="服务行业">
+          <span>食品</span>
+          <span>日化</span>
+          <span>保健品</span>
+          <span>零售品</span>
         </div>
       </div>
     </section>
@@ -1001,25 +987,14 @@
           <div class="facility-photo">
             <img src="北星门帘.jpg" alt="北星包装门帘与企业环境实拍照片" loading="lazy">
           </div>
-          <div class="facility-caption">
-            <span class="facility-index">01</span>
-            <h3>企业环境</h3>
-            <p>北星门帘与风幕实景</p>
-          </div>
         </article>
         <article class="facility-card">
           <div class="facility-photo facility-carousel" role="group" aria-roledescription="轮播图" aria-label="生产设备实拍照片" data-carousel>
-            <img class="is-active" src="production-equipment.jpg" alt="北星包装生产设备实拍照片" loading="lazy">
+            <img class="is-active" src="printing-press-1.jpg" alt="北星包装印刷机实拍照片" loading="lazy">
+            <img src="printing-press-2.jpg" alt="北星包装印刷生产线实拍照片" loading="lazy" aria-hidden="true">
+            <img src="production-equipment.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
             <img src="production-equipment-2.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
             <img src="production-equipment-3.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
-            <button class="carousel-control previous" type="button" data-carousel-previous aria-label="上一张生产设备照片">‹</button>
-            <button class="carousel-control next" type="button" data-carousel-next aria-label="下一张生产设备照片">›</button>
-            <span class="carousel-count" data-carousel-count aria-live="off">01 / 03</span>
-          </div>
-          <div class="facility-caption">
-            <span class="facility-index">02</span>
-            <h3>生产设备</h3>
-            <p>印刷、复合与制袋设备实拍 · 每2秒自动切换</p>
           </div>
         </article>
         <article class="facility-card">
@@ -1027,14 +1002,6 @@
             <img class="is-active" src="production-workshop.jpg" alt="北星包装生产车间实拍照片" loading="lazy">
             <img src="production-workshop-2.jpg" alt="北星包装生产车间现场实拍照片" loading="lazy" aria-hidden="true">
             <img src="production-workshop-3.jpg" alt="北星包装生产操作现场实拍照片" loading="lazy" aria-hidden="true">
-            <button class="carousel-control previous" type="button" data-carousel-previous aria-label="上一张车间照片">‹</button>
-            <button class="carousel-control next" type="button" data-carousel-next aria-label="下一张车间照片">›</button>
-            <span class="carousel-count" data-carousel-count aria-live="off">01 / 03</span>
-          </div>
-          <div class="facility-caption">
-            <span class="facility-index">03</span>
-            <h3>生产车间</h3>
-            <p>洁净车间与生产现场实拍 · 每2秒自动切换</p>
           </div>
         </article>
       </div>
@@ -1205,7 +1172,6 @@
 
     document.querySelectorAll("[data-carousel]").forEach((carousel) => {
       const slides = [...carousel.querySelectorAll("img")];
-      const counter = carousel.querySelector("[data-carousel-count]");
       let activeIndex = 0;
       let intervalId;
 
@@ -1215,30 +1181,15 @@
         activeIndex = (nextIndex + slides.length) % slides.length;
         slides[activeIndex].classList.add("is-active");
         slides[activeIndex].removeAttribute("aria-hidden");
-        counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
       };
 
       const stopCarousel = () => window.clearInterval(intervalId);
       const startCarousel = () => {
         stopCarousel();
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         intervalId = window.setInterval(() => showSlide(activeIndex + 1), 2000);
       };
 
-      carousel.querySelector("[data-carousel-previous]").addEventListener("click", () => {
-        showSlide(activeIndex - 1);
-        startCarousel();
-      });
-      carousel.querySelector("[data-carousel-next]").addEventListener("click", () => {
-        showSlide(activeIndex + 1);
-        startCarousel();
-      });
-      carousel.addEventListener("mouseenter", stopCarousel);
-      carousel.addEventListener("mouseleave", startCarousel);
-      carousel.addEventListener("focusin", stopCarousel);
-      carousel.addEventListener("focusout", (event) => {
-        if (!carousel.contains(event.relatedTarget)) startCarousel();
-      });
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) stopCarousel();
         else startCarousel();
