@@ -343,23 +343,6 @@
       object-fit: cover;
     }
 
-    .image-credit {
-      position: absolute;
-      right: 9px;
-      bottom: 9px;
-      z-index: 1;
-      padding: 5px 8px;
-      color: rgba(255,255,255,.92);
-      background: rgba(23,37,31,.64);
-      font-size: 9px;
-      letter-spacing: .3px;
-      transition: background .2s ease;
-    }
-
-    .image-credit:hover {
-      background: rgba(23,37,31,.88);
-    }
-
     .product-info {
       padding: 13px 2px 3px;
     }
@@ -682,6 +665,12 @@
       font-weight: 500;
     }
 
+    .contact-meta a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .contact-row {
       display: flex;
       flex-wrap: wrap;
@@ -841,7 +830,7 @@
 
     @media (min-width: 1100px) {
       .facility-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
@@ -962,12 +951,12 @@
       <div class="facility-grid">
         <article class="facility-card">
           <div class="facility-photo">
-            <img src="factory-exterior.jpg" alt="北星包装厂区外观实拍照片" loading="lazy">
+            <img src="main-entrance-curtain.jpg" alt="北星包装门帘与风幕实拍照片" loading="lazy">
           </div>
           <div class="facility-caption">
             <span class="facility-index">01</span>
             <h3>企业环境</h3>
-            <p>公司外观、办公环境与园区全景</p>
+            <p>北星门帘与风幕实景</p>
           </div>
         </article>
         <article class="facility-card">
@@ -990,27 +979,16 @@
             <p>洁净车间、生产线与工作现场</p>
           </div>
         </article>
-        <article class="facility-card">
-          <div class="facility-photo">
-            <img src="main-entrance-curtain.jpg" alt="北星包装公司主大门门帘与风幕实拍照片" loading="lazy">
-          </div>
-          <div class="facility-caption">
-            <span class="facility-index">04</span>
-            <h3>公司主大门</h3>
-            <p>北星主入口门帘与风幕实景</p>
-          </div>
-        </article>
       </div>
     </section>
 
     <section class="section cases">
       <h2 class="section-heading">应用方案</h2>
-      <p class="section-subtitle">常见包装应用方向，图片为公开图库示意参考</p>
+      <p class="section-subtitle">结合不同产品场景，展示软包装应用方向</p>
       <div class="cases-grid">
         <article class="case-card">
           <div class="case-visual">
             <img src="pouch-white.jpg" alt="白色自立拉链袋包装参考图" loading="lazy">
-            <a class="image-credit" href="https://www.pexels.com/photo/two-stand-up-zipper-pouch-on-white-surface-12024976/" target="_blank" rel="noopener noreferrer">图片来源：Pexels</a>
           </div>
           <div class="case-tag">食品包装</div>
           <h3>食品软包装</h3>
@@ -1019,7 +997,6 @@
         <article class="case-card">
           <div class="case-visual">
             <img src="pouch-green.jpg" alt="绿色可封口包装袋参考图" loading="lazy">
-            <a class="image-credit" href="https://www.pexels.com/photo/minimalist-design-of-packaging-16100293/" target="_blank" rel="noopener noreferrer">图片来源：Pexels</a>
           </div>
           <div class="case-tag">日化包装</div>
           <h3>日化产品包装</h3>
@@ -1091,12 +1068,12 @@
         <h2>为您的产品<br>定制合适的包装</h2>
         <p>欢迎联系北星包装，沟通袋型、规格、材质与印刷需求，获取专属包装方案。</p>
         <ul class="contact-meta">
-          <li><strong>电 话</strong>：17692790007</li>
+          <li><strong>电 话</strong>：<a href="tel:17692790007">17692790007</a></li>
           <li><strong>邮 箱</strong>：3274129186@qq.com</li>
           <li><strong>地 址</strong>：河北省沧州市东光县京南科技示范园北星包装材料有限公司</li>
         </ul>
         <div class="contact-row">
-          <a class="contact-button" href="#contact">联系咨询　→</a>
+          <a class="contact-button" href="tel:17692790007">联系咨询　→</a>
         </div>
       </div>
     </section>
@@ -1108,27 +1085,27 @@
   </footer>
 
   <div class="sticky-cta">
-    <a href="#contact">联系咨询</a>
+    <a href="tel:17692790007">联系咨询</a>
     <a href="#products">查看产品</a>
   </div>
 
   <script>
     const products = {
       octagon: [
-        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图", source: "https://www.pexels.com/photo/two-stand-up-zipper-pouch-on-white-surface-12024976/" },
-        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图", source: "https://www.pexels.com/photo/minimalist-design-of-packaging-16100293/" }
+        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图" },
+        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图" }
       ],
       "three-side": [
-        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图", source: "https://www.pexels.com/photo/paper-bag-on-white-background-12039675/" },
-        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "pouch-coffee.jpg", alt: "咖啡包装袋与冲煮场景参考图", source: "https://www.pexels.com/photo/coffee-beans-spill-over-the-wooden-table-8004546/" }
+        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图" },
+        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "pouch-coffee.jpg", alt: "咖啡包装袋与冲煮场景参考图" }
       ],
       "back-seal": [
-        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图", source: "https://www.pexels.com/photo/paper-bag-on-white-background-12039675/" },
-        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "pouch-refill.jpg", alt: "日化用品与袋型包装参考图", source: "https://www.pexels.com/photo/a-pouch-in-the-box-beside-a-plastic-bottle-8015893/" }
+        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "pouch-kraft.jpg", alt: "牛皮纸包装袋参考图" },
+        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "pouch-refill.jpg", alt: "日化用品与袋型包装参考图" }
       ],
       "stand-up": [
-        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图", source: "https://www.pexels.com/photo/two-stand-up-zipper-pouch-on-white-surface-12024976/" },
-        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图", source: "https://www.pexels.com/photo/minimalist-design-of-packaging-16100293/" }
+        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图" },
+        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图" }
       ]
     };
 
@@ -1145,7 +1122,6 @@
         <article class="product-card">
           <div class="product-art">
             <img src="${product.image}" alt="${product.alt}" loading="lazy">
-            <a class="image-credit" href="${product.source}" target="_blank" rel="noopener noreferrer">图片来源：Pexels</a>
           </div>
           <div class="product-info">
             <div class="product-type">${labels[type]}</div>
