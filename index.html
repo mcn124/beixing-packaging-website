@@ -67,15 +67,15 @@
     }
 
     .brand-mark {
-      width: 31px;
-      height: 31px;
-      display: grid;
-      place-items: center;
-      color: var(--green);
-      background: var(--gold);
+      width: 44px;
+      height: 44px;
+      display: block;
+      flex: 0 0 auto;
+      object-fit: cover;
+      object-position: center;
+      border: 2px solid var(--gold);
       border-radius: 50%;
-      font-family: serif;
-      font-size: 17px;
+      background: #fff;
     }
 
     .top-link {
@@ -98,14 +98,21 @@
     }
 
     .hero {
-      min-height: 490px;
+      min-height: 520px;
       padding: 76px max(25px, calc((100vw - 1080px) / 2)) 54px;
       overflow: hidden;
       position: relative;
+      isolation: isolate;
       color: #fff;
       background:
-        radial-gradient(ellipse at 82% 73%, rgba(201,169,110,.17), transparent 35%),
-        linear-gradient(145deg, #1d3027, #101b16);
+        linear-gradient(90deg, rgba(13,26,21,.68) 0%, rgba(13,26,21,.42) 43%, rgba(13,26,21,.1) 100%),
+        linear-gradient(0deg, rgba(13,26,21,.08), rgba(13,26,21,0)),
+        url("北星门帘.jpg") center 46% / cover no-repeat;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     .hero::before {
@@ -113,17 +120,19 @@
       width: 270px;
       height: 270px;
       position: absolute;
+      z-index: 0;
       right: -120px;
       top: 60px;
       border: 1px solid rgba(201,169,110,.26);
       border-radius: 50%;
       box-shadow: 0 0 0 35px rgba(201,169,110,.04),
                   0 0 0 70px rgba(201,169,110,.03);
+      pointer-events: none;
     }
 
     .hero-kicker {
       margin-bottom: 20px;
-      color: var(--gold);
+      color: #e6ca91;
       font-size: 11px;
       letter-spacing: 4px;
     }
@@ -135,6 +144,7 @@
       font-weight: 500;
       line-height: 1.5;
       letter-spacing: 2px;
+      text-shadow: 0 3px 22px rgba(0,0,0,.24);
     }
 
     .hero p {
@@ -154,6 +164,14 @@
       color: #e9d8b8;
       font-size: 12px;
       letter-spacing: 1px;
+      background: rgba(15,28,22,.24);
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    .hero-button:hover {
+      border-color: var(--gold);
+      color: var(--green);
+      background: var(--gold);
     }
 
     .hero-button span {
@@ -545,6 +563,66 @@
       line-height: 1.8;
     }
 
+    .credentials {
+      background: #fff;
+    }
+
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .credential-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      width: calc(50% - 9px);
+      justify-self: center;
+    }
+
+    .credential-card {
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid #ece5dc;
+      background: #fff;
+      box-shadow: 0 8px 26px rgba(34, 39, 31, .04);
+    }
+
+    .credential-image {
+      height: 170px;
+      display: block;
+      overflow: hidden;
+      border: 1px solid #eeeae2;
+      background: var(--paper);
+    }
+
+    .credential-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      transition: transform .25s ease;
+    }
+
+    .credential-image:hover img {
+      transform: scale(1.03);
+    }
+
+    .credential-caption {
+      padding: 12px 3px 4px;
+    }
+
+    .credential-caption h3 {
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .credential-caption p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
     .cases-grid {
       display: grid;
       gap: 12px;
@@ -799,9 +877,11 @@
       }
 
       .hero {
-        min-height: 570px;
+        min-height: 620px;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
       }
 
       .hero h1 {
@@ -856,6 +936,28 @@
       .facility-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
+      }
+
+      .credential-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .credential-card {
+        grid-column: span 2;
+        width: auto;
+      }
+
+      .credential-card:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
+
+      .credential-card:nth-child(5) {
+        grid-column: 4 / span 2;
+      }
+
+      .credential-image {
+        height: 210px;
       }
 
       .case-visual {
@@ -914,13 +1016,14 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#">
-      <span class="brand-mark">北</span>
+      <img class="brand-mark" src="logo.jpg" alt="北星包装标志">
       <span>北星包装</span>
     </a>
     <nav class="main-nav" aria-label="主导航">
       <a href="#about">关于我们</a>
       <a href="#culture">企业文化</a>
       <a href="#facility">工厂实景</a>
+      <a href="#credentials">资质认证</a>
       <a href="#products">产品中心</a>
       <a href="#contact">联系我们</a>
     </nav>
@@ -1055,6 +1158,58 @@
       </div>
     </section>
 
+    <section class="section credentials" id="credentials">
+      <h2 class="section-heading">资质与认证</h2>
+      <p class="section-subtitle">经营证照、生产许可与质量管理体系认证</p>
+      <div class="credential-grid">
+        <article class="credential-card">
+          <a class="credential-image" href="1.jpg" target="_blank" rel="noopener" aria-label="查看营业执照原图">
+            <img src="1.jpg" alt="东光县北星包装材料有限公司营业执照" loading="lazy">
+          </a>
+          <div class="credential-caption">
+            <h3>营业执照</h3>
+            <p>企业登记证照</p>
+          </div>
+        </article>
+        <article class="credential-card">
+          <a class="credential-image" href="2.jpg" target="_blank" rel="noopener" aria-label="查看印刷经营许可证原图">
+            <img src="2.jpg" alt="东光县北星包装材料有限公司印刷经营许可证" loading="lazy">
+          </a>
+          <div class="credential-caption">
+            <h3>印刷经营许可证</h3>
+            <p>印刷经营资质</p>
+          </div>
+        </article>
+        <article class="credential-card">
+          <a class="credential-image" href="3.jpg" target="_blank" rel="noopener" aria-label="查看工业产品生产许可证原图">
+            <img src="3.jpg" alt="全国工业产品生产许可证副本" loading="lazy">
+          </a>
+          <div class="credential-caption">
+            <h3>工业产品生产许可证</h3>
+            <p>包装膜袋类生产许可</p>
+          </div>
+        </article>
+        <article class="credential-card">
+          <a class="credential-image" href="4.jpg" target="_blank" rel="noopener" aria-label="查看生产许可证附页原图">
+            <img src="4.jpg" alt="全国工业产品生产许可证附页" loading="lazy">
+          </a>
+          <div class="credential-caption">
+            <h3>生产许可证附页</h3>
+            <p>许可产品明细</p>
+          </div>
+        </article>
+        <article class="credential-card">
+          <a class="credential-image" href="5.png" target="_blank" rel="noopener" aria-label="查看ISO 9001质量管理体系认证证书原图">
+            <img src="5.png" alt="东光县北星包装材料有限公司ISO 9001质量管理体系认证证书" loading="lazy">
+          </a>
+          <div class="credential-caption">
+            <h3>ISO 9001 质量管理体系</h3>
+            <p>质量管理体系认证证书</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section cases">
       <h2 class="section-heading">应用方案</h2>
       <p class="section-subtitle">结合不同产品场景，展示软包装应用方向</p>
@@ -1084,7 +1239,7 @@
           <h2 class="section-heading">精选袋型</h2>
           <p class="section-subtitle">点击袋型，查看包装图片示意与产品说明</p>
         </div>
-        <span class="product-count">01 — 04</span>
+        <span class="product-count">01 — 05</span>
       </div>
 
       <div class="category-list" role="group" aria-label="选择包装袋型">
@@ -1092,6 +1247,7 @@
         <button class="category-button" type="button" data-type="three-side" aria-pressed="false">三边封</button>
         <button class="category-button" type="button" data-type="back-seal" aria-pressed="false">背封袋</button>
         <button class="category-button" type="button" data-type="stand-up" aria-pressed="false">自立袋</button>
+        <button class="category-button" type="button" data-type="die-cut" aria-pressed="false">异形模切袋</button>
       </div>
 
       <div class="product-grid" id="productGrid" aria-live="polite"></div>
@@ -1179,6 +1335,10 @@
       "stand-up": [
         { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "pouch-white.jpg", alt: "白色自立拉链袋包装参考图" },
         { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "pouch-green.jpg", alt: "绿色可封口包装袋参考图" }
+      ],
+      "die-cut": [
+        { name: "异形模切袋", desc: "可按产品与品牌造型定制轮廓，适合个性化展示。", image: "pouch-white.jpg", alt: "异形模切袋包装参考图" },
+        { name: "定制异形袋", desc: "沟通外形、尺寸与材料，打造差异化包装。", image: "pouch-green.jpg", alt: "定制异形包装袋参考图" }
       ]
     };
 
@@ -1186,7 +1346,8 @@
       octagon: "八边封包装",
       "three-side": "三边封包装",
       "back-seal": "背封包装",
-      "stand-up": "自立袋包装"
+      "stand-up": "自立袋包装",
+      "die-cut": "异形模切袋"
     };
 
     function renderProducts(type) {
