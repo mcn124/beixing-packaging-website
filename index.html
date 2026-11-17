@@ -465,6 +465,54 @@
       object-fit: cover;
     }
 
+    .facility-carousel img {
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+
+    .facility-carousel img.is-active {
+      opacity: 1;
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(23,37,31,.65);
+      font-size: 19px;
+      line-height: 1;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .carousel-control.previous {
+      left: 9px;
+    }
+
+    .carousel-control.next {
+      right: 9px;
+    }
+
+    .carousel-count {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 2;
+      padding: 4px 7px;
+      color: #fff;
+      background: rgba(23,37,31,.68);
+      font-size: 10px;
+      letter-spacing: .5px;
+    }
+
     .facility-photo::after {
       content: "";
       position: absolute;
@@ -951,7 +999,7 @@
       <div class="facility-grid">
         <article class="facility-card">
           <div class="facility-photo">
-            <img src="main-entrance-curtain.jpg" alt="北星包装门帘与风幕实拍照片" loading="lazy">
+            <img src="北星门帘.jpg" alt="北星包装门帘与企业环境实拍照片" loading="lazy">
           </div>
           <div class="facility-caption">
             <span class="facility-index">01</span>
@@ -960,23 +1008,33 @@
           </div>
         </article>
         <article class="facility-card">
-          <div class="facility-photo">
-            <img src="production-equipment.jpg" alt="北星包装印刷生产设备实拍照片" loading="lazy">
+          <div class="facility-photo facility-carousel" role="group" aria-roledescription="轮播图" aria-label="生产设备实拍照片" data-carousel>
+            <img class="is-active" src="production-equipment.jpg" alt="北星包装生产设备实拍照片" loading="lazy">
+            <img src="production-equipment-2.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
+            <img src="production-equipment-3.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
+            <button class="carousel-control previous" type="button" data-carousel-previous aria-label="上一张生产设备照片">‹</button>
+            <button class="carousel-control next" type="button" data-carousel-next aria-label="下一张生产设备照片">›</button>
+            <span class="carousel-count" data-carousel-count aria-live="off">01 / 03</span>
           </div>
           <div class="facility-caption">
             <span class="facility-index">02</span>
             <h3>生产设备</h3>
-            <p>印刷、复合、制袋与检测设备</p>
+            <p>印刷、复合与制袋设备实拍 · 每2秒自动切换</p>
           </div>
         </article>
         <article class="facility-card">
-          <div class="facility-photo">
-            <img src="production-workshop.jpg" alt="北星包装生产车间实拍照片" loading="lazy">
+          <div class="facility-photo facility-carousel" role="group" aria-roledescription="轮播图" aria-label="生产车间实拍照片" data-carousel>
+            <img class="is-active" src="production-workshop.jpg" alt="北星包装生产车间实拍照片" loading="lazy">
+            <img src="production-workshop-2.jpg" alt="北星包装生产车间现场实拍照片" loading="lazy" aria-hidden="true">
+            <img src="production-workshop-3.jpg" alt="北星包装生产操作现场实拍照片" loading="lazy" aria-hidden="true">
+            <button class="carousel-control previous" type="button" data-carousel-previous aria-label="上一张车间照片">‹</button>
+            <button class="carousel-control next" type="button" data-carousel-next aria-label="下一张车间照片">›</button>
+            <span class="carousel-count" data-carousel-count aria-live="off">01 / 03</span>
           </div>
           <div class="facility-caption">
             <span class="facility-index">03</span>
             <h3>生产车间</h3>
-            <p>洁净车间、生产线与工作现场</p>
+            <p>洁净车间与生产现场实拍 · 每2秒自动切换</p>
           </div>
         </article>
       </div>
@@ -1143,6 +1201,49 @@
         button.setAttribute("aria-pressed", "true");
         renderProducts(button.dataset.type);
       });
+    });
+
+    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+      const slides = [...carousel.querySelectorAll("img")];
+      const counter = carousel.querySelector("[data-carousel-count]");
+      let activeIndex = 0;
+      let intervalId;
+
+      const showSlide = (nextIndex) => {
+        slides[activeIndex].classList.remove("is-active");
+        slides[activeIndex].setAttribute("aria-hidden", "true");
+        activeIndex = (nextIndex + slides.length) % slides.length;
+        slides[activeIndex].classList.add("is-active");
+        slides[activeIndex].removeAttribute("aria-hidden");
+        counter.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+      };
+
+      const stopCarousel = () => window.clearInterval(intervalId);
+      const startCarousel = () => {
+        stopCarousel();
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        intervalId = window.setInterval(() => showSlide(activeIndex + 1), 2000);
+      };
+
+      carousel.querySelector("[data-carousel-previous]").addEventListener("click", () => {
+        showSlide(activeIndex - 1);
+        startCarousel();
+      });
+      carousel.querySelector("[data-carousel-next]").addEventListener("click", () => {
+        showSlide(activeIndex + 1);
+        startCarousel();
+      });
+      carousel.addEventListener("mouseenter", stopCarousel);
+      carousel.addEventListener("mouseleave", startCarousel);
+      carousel.addEventListener("focusin", stopCarousel);
+      carousel.addEventListener("focusout", (event) => {
+        if (!carousel.contains(event.relatedTarget)) startCarousel();
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopCarousel();
+        else startCarousel();
+      });
+      startCarousel();
     });
 
     renderProducts("octagon");
