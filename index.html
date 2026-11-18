@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#17251f">
   <meta name="description" content="北星包装专注塑料软包装设计与定制，提供袋型设计、材质印刷沟通及生产交付服务。">
+  <link rel="preload" as="image" href="北星门帘.jpg?v=20261118-2" fetchpriority="high">
   <title>北星包装｜高端包装定制</title>
   <style>
     * {
@@ -60,6 +61,7 @@
       top: 0;
       z-index: 20;
       height: 62px;
+      padding: 0 22px;
       padding: 0 max(22px, calc((100vw - 1160px) / 2));
       display: flex;
       align-items: center;
@@ -111,6 +113,7 @@
 
     .hero {
       min-height: 520px;
+      padding: 76px 25px 54px;
       padding: 76px max(25px, calc((100vw - 1080px) / 2)) 54px;
       overflow: hidden;
       position: relative;
@@ -120,7 +123,7 @@
       background-image:
         linear-gradient(90deg, rgba(13,26,21,.84) 0%, rgba(13,26,21,.72) 48%, rgba(13,26,21,.28) 100%),
         linear-gradient(0deg, rgba(13,26,21,.3), rgba(13,26,21,.04) 60%, rgba(13,26,21,.18)),
-        url("北星门帘.jpg");
+        url("北星门帘.jpg?v=20261118-2");
       background-position: center, center, 58% center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -219,7 +222,8 @@
     }
 
     .hero-highlights {
-      width: min(100%, 410px);
+      width: 100%;
+      max-width: 410px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
@@ -255,6 +259,7 @@
     }
 
     .section {
+      padding: 64px 21px;
       padding: 64px max(21px, calc((100vw - 1080px) / 2));
     }
 
@@ -815,6 +820,7 @@
     }
 
     .process {
+      padding: 48px 20px;
       padding: 48px max(20px, calc((100vw - 1080px) / 2));
       background: var(--paper);
     }
@@ -946,6 +952,7 @@
     }
 
     footer {
+      padding: 24px 15px 78px;
       padding: 24px max(15px, calc((100vw - 1080px) / 2)) calc(78px + env(safe-area-inset-bottom));
       color: #8d9189;
       background: #f1efe9;
@@ -1106,12 +1113,14 @@
       }
 
       .hero {
+        min-height: 520px;
+        min-height: min(660px, calc(100vh - 58px));
         min-height: min(660px, calc(100svh - 58px));
         padding: 48px 22px 30px;
         background-image:
           linear-gradient(90deg, rgba(13,26,21,.84) 0%, rgba(13,26,21,.72) 55%, rgba(13,26,21,.4) 100%),
           linear-gradient(0deg, rgba(13,26,21,.24), rgba(13,26,21,.08)),
-          url("北星门帘.jpg");
+          url("北星门帘.jpg?v=20261118-2");
         background-position: center, center, 58% center;
         background-size: cover;
       }
@@ -1125,6 +1134,7 @@
       .hero h1 {
         max-width: 13em;
         margin-bottom: 14px;
+        font-size: 34px;
         font-size: clamp(32px, 9vw, 39px);
         line-height: 1.4;
       }
@@ -1197,6 +1207,7 @@
       }
 
       .intro-highlight strong {
+        font-size: 15px;
         font-size: clamp(14px, 4.3vw, 17px);
       }
 
@@ -1230,6 +1241,7 @@
         right: 0;
         bottom: 0;
         left: 0;
+        padding: 9px 16px;
         padding: 9px 16px calc(9px + env(safe-area-inset-bottom));
       }
     }
@@ -1238,7 +1250,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#">
-      <img class="brand-mark" src="logo.jpg" alt="北星包装标志">
+      <img class="brand-mark" src="logo.jpg?v=20261118-2" alt="北星包装标志" width="44" height="44" loading="eager" decoding="async" fetchpriority="high">
       <span>北星包装</span>
     </a>
     <nav class="main-nav" aria-label="主导航">
@@ -1357,7 +1369,7 @@
       <div class="facility-grid">
         <article class="facility-card">
           <div class="facility-photo">
-            <img src="北星门帘.jpg" alt="北星包装门帘与企业环境实拍照片" loading="lazy">
+            <img src="北星门帘.jpg?v=20261118-2" alt="北星包装门帘与企业环境实拍照片" loading="lazy" decoding="async">
           </div>
           <div class="facility-caption">
             <span class="facility-index">01</span>
@@ -1367,11 +1379,11 @@
         </article>
         <article class="facility-card">
           <div class="facility-photo facility-carousel" role="group" aria-roledescription="轮播图" aria-label="生产设备实拍照片" data-carousel>
-            <img class="is-active" src="printing-press-1.jpg" alt="北星包装印刷机实拍照片" loading="lazy">
-            <img src="printing-press-2.jpg" alt="北星包装印刷生产线实拍照片" loading="lazy" aria-hidden="true">
-            <img src="production-equipment.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
-            <img src="production-equipment-2.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
-            <img src="production-equipment-3.jpg" alt="北星包装生产设备实拍照片" loading="lazy" aria-hidden="true">
+            <img class="is-active" src="printing-press-1.jpg?v=20261118-2" alt="北星包装印刷机实拍照片" loading="lazy" decoding="async">
+            <img src="printing-press-2.jpg?v=20261118-2" alt="北星包装印刷生产线实拍照片" loading="lazy" decoding="async" aria-hidden="true">
+            <img src="production-equipment.jpg?v=20261118-2" alt="北星包装生产设备实拍照片" loading="lazy" decoding="async" aria-hidden="true">
+            <img src="production-equipment-2.jpg?v=20261118-2" alt="北星包装生产设备实拍照片" loading="lazy" decoding="async" aria-hidden="true">
+            <img src="production-equipment-3.jpg?v=20261118-2" alt="北星包装生产设备实拍照片" loading="lazy" decoding="async" aria-hidden="true">
           </div>
           <div class="facility-caption">
             <span class="facility-index">02</span>
@@ -1381,9 +1393,9 @@
         </article>
         <article class="facility-card">
           <div class="facility-photo facility-carousel" role="group" aria-roledescription="轮播图" aria-label="生产车间实拍照片" data-carousel>
-            <img class="is-active" src="production-workshop.jpg" alt="北星包装生产车间实拍照片" loading="lazy">
-            <img src="production-workshop-2.jpg" alt="北星包装生产车间现场实拍照片" loading="lazy" aria-hidden="true">
-            <img src="production-workshop-3.jpg" alt="北星包装生产操作现场实拍照片" loading="lazy" aria-hidden="true">
+            <img class="is-active" src="production-workshop.jpg?v=20261118-2" alt="北星包装生产车间实拍照片" loading="lazy" decoding="async">
+            <img src="production-workshop-2.jpg?v=20261118-2" alt="北星包装生产车间现场实拍照片" loading="lazy" decoding="async" aria-hidden="true">
+            <img src="production-workshop-3.jpg?v=20261118-2" alt="北星包装生产操作现场实拍照片" loading="lazy" decoding="async" aria-hidden="true">
           </div>
           <div class="facility-caption">
             <span class="facility-index">03</span>
@@ -1399,8 +1411,8 @@
       <p class="section-subtitle">经营证照、生产许可与质量管理体系认证</p>
       <div class="credential-grid">
         <article class="credential-card">
-          <a class="credential-image" href="1.jpg" target="_blank" rel="noopener" aria-label="查看营业执照原图">
-            <img src="1.jpg" alt="东光县北星包装材料有限公司营业执照" loading="lazy">
+          <a class="credential-image" href="1.jpg?v=20261118-2" target="_blank" rel="noopener" aria-label="查看营业执照原图">
+            <img src="1.jpg?v=20261118-2" alt="东光县北星包装材料有限公司营业执照" loading="lazy" decoding="async">
           </a>
           <div class="credential-caption">
             <h3>营业执照</h3>
@@ -1408,8 +1420,8 @@
           </div>
         </article>
         <article class="credential-card">
-          <a class="credential-image" href="2.jpg" target="_blank" rel="noopener" aria-label="查看印刷经营许可证原图">
-            <img src="2.jpg" alt="东光县北星包装材料有限公司印刷经营许可证" loading="lazy">
+          <a class="credential-image" href="2.jpg?v=20261118-2" target="_blank" rel="noopener" aria-label="查看印刷经营许可证原图">
+            <img src="2.jpg?v=20261118-2" alt="东光县北星包装材料有限公司印刷经营许可证" loading="lazy" decoding="async">
           </a>
           <div class="credential-caption">
             <h3>印刷经营许可证</h3>
@@ -1417,8 +1429,8 @@
           </div>
         </article>
         <article class="credential-card">
-          <a class="credential-image" href="3.jpg" target="_blank" rel="noopener" aria-label="查看工业产品生产许可证原图">
-            <img src="3.jpg" alt="全国工业产品生产许可证副本" loading="lazy">
+          <a class="credential-image" href="3.jpg?v=20261118-2" target="_blank" rel="noopener" aria-label="查看工业产品生产许可证原图">
+            <img src="3.jpg?v=20261118-2" alt="全国工业产品生产许可证副本" loading="lazy" decoding="async">
           </a>
           <div class="credential-caption">
             <h3>工业产品生产许可证</h3>
@@ -1426,8 +1438,8 @@
           </div>
         </article>
         <article class="credential-card">
-          <a class="credential-image" href="4.jpg" target="_blank" rel="noopener" aria-label="查看生产许可证附页原图">
-            <img src="4.jpg" alt="全国工业产品生产许可证附页" loading="lazy">
+          <a class="credential-image" href="4.jpg?v=20261118-2" target="_blank" rel="noopener" aria-label="查看生产许可证附页原图">
+            <img src="4.jpg?v=20261118-2" alt="全国工业产品生产许可证附页" loading="lazy" decoding="async">
           </a>
           <div class="credential-caption">
             <h3>生产许可证附页</h3>
@@ -1435,8 +1447,8 @@
           </div>
         </article>
         <article class="credential-card">
-          <a class="credential-image" href="5.png" target="_blank" rel="noopener" aria-label="查看ISO 9001质量管理体系认证证书原图">
-            <img src="5.png" alt="东光县北星包装材料有限公司ISO 9001质量管理体系认证证书" loading="lazy">
+          <a class="credential-image" href="5.jpg?v=20261118-2" target="_blank" rel="noopener" aria-label="查看ISO 9001质量管理体系认证证书原图">
+            <img src="5.jpg?v=20261118-2" alt="东光县北星包装材料有限公司ISO 9001质量管理体系认证证书" loading="lazy" decoding="async">
           </a>
           <div class="credential-caption">
             <h3>ISO 9001 质量管理体系</h3>
@@ -1534,24 +1546,24 @@
   <script>
     const products = {
       octagon: [
-        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "octagon-1.jpg", alt: "多款八边封袋产品实拍图" },
-        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "octagon-2.jpg", alt: "黑色八边封茶叶袋实拍图" }
+        { name: "标准八边封袋", desc: "立体袋型设计，适合多种产品包装。", image: "octagon-1.jpg?v=20261118-2", alt: "多款八边封袋产品实拍图" },
+        { name: "定制八边封袋", desc: "支持按需求沟通尺寸与印刷方案。", image: "octagon-2.jpg?v=20261118-2", alt: "黑色八边封茶叶袋实拍图" }
       ],
       "three-side": [
-        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "three-side-1.jpg", alt: "牛皮纸三边封包装袋实拍图" },
-        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "three-side-2.jpg", alt: "彩色三边封食品包装袋实拍图" }
+        { name: "标准三边封袋", desc: "简洁实用的袋型，适用于多种包装场景。", image: "three-side-1.jpg?v=20261118-2", alt: "牛皮纸三边封包装袋实拍图" },
+        { name: "定制三边封袋", desc: "可根据产品特点沟通规格与外观设计。", image: "three-side-2.jpg?v=20261118-2", alt: "彩色三边封食品包装袋实拍图" }
       ],
       "back-seal": [
-        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "back-seal-1.jpg", alt: "凤梨酥背封袋包装实拍图" },
-        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "back-seal-2.jpg", alt: "背封袋单边与双边封口效果实拍图" }
+        { name: "背封包装袋", desc: "背部封口结构，适合常见软包装需求。", image: "back-seal-1.jpg?v=20261118-2", alt: "凤梨酥背封袋包装实拍图" },
+        { name: "定制背封袋", desc: "支持沟通袋宽、袋长与印刷效果。", image: "back-seal-2.jpg?v=20261118-2", alt: "背封袋单边与双边封口效果实拍图" }
       ],
       "stand-up": [
-        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "stand-up-1.jpg", alt: "彩印自立袋产品实拍图" },
-        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "stand-up-2.jpg", alt: "坚果自立袋产品实拍图" }
+        { name: "自立包装袋", desc: "底部可展开，便于陈列与收纳。", image: "stand-up-1.jpg?v=20261118-2", alt: "彩印自立袋产品实拍图" },
+        { name: "定制自立袋", desc: "结合产品形态沟通袋型与包装方案。", image: "stand-up-2.jpg?v=20261118-2", alt: "坚果自立袋产品实拍图" }
       ],
       "die-cut": [
-        { name: "异形模切袋", desc: "可按产品与品牌造型定制轮廓，适合个性化展示。", image: "die-cut-1.jpg", alt: "坚果造型异形模切袋产品实拍图" },
-        { name: "定制异形袋", desc: "沟通外形、尺寸与材料，打造差异化包装。", image: "die-cut-2.jpg", alt: "动物造型异形模切袋产品实拍图" }
+        { name: "异形模切袋", desc: "可按产品与品牌造型定制轮廓，适合个性化展示。", image: "die-cut-1.jpg?v=20261118-2", alt: "坚果造型异形模切袋产品实拍图" },
+        { name: "定制异形袋", desc: "沟通外形、尺寸与材料，打造差异化包装。", image: "die-cut-2.jpg?v=20261118-2", alt: "动物造型异形模切袋产品实拍图" }
       ]
     };
 
@@ -1568,7 +1580,7 @@
       grid.innerHTML = products[type].map((product) => `
         <article class="product-card">
           <div class="product-art">
-            <img src="${product.image}" alt="${product.alt}" loading="lazy">
+            <img src="${product.image}" alt="${product.alt}" loading="lazy" decoding="async">
           </div>
           <div class="product-info">
             <div class="product-type">${labels[type]}</div>
