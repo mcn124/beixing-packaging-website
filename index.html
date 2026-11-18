@@ -24,6 +24,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 76px;
     }
 
     body {
@@ -34,6 +35,10 @@
       font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
     }
 
+    [id] {
+      scroll-margin-top: 76px;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -41,6 +46,13 @@
 
     button {
       font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
     }
 
     .topbar {
@@ -104,10 +116,14 @@
       position: relative;
       isolation: isolate;
       color: #fff;
-      background:
-        linear-gradient(90deg, rgba(13,26,21,.68) 0%, rgba(13,26,21,.42) 43%, rgba(13,26,21,.1) 100%),
-        linear-gradient(0deg, rgba(13,26,21,.08), rgba(13,26,21,0)),
-        url("北星门帘.jpg") center 46% / cover no-repeat;
+      background-color: var(--green);
+      background-image:
+        linear-gradient(90deg, rgba(13,26,21,.84) 0%, rgba(13,26,21,.72) 48%, rgba(13,26,21,.28) 100%),
+        linear-gradient(0deg, rgba(13,26,21,.3), rgba(13,26,21,.04) 60%, rgba(13,26,21,.18)),
+        url("北星门帘.jpg");
+      background-position: center, center, 58% center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .hero > * {
@@ -157,8 +173,9 @@
     .hero-button {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 15px;
-      margin-top: 24px;
+      min-height: 48px;
       padding: 12px 17px;
       border: 1px solid rgba(201,169,110,.75);
       color: #e9d8b8;
@@ -174,12 +191,64 @@
       background: var(--gold);
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .hero-button.primary {
+      border-color: var(--gold);
+      color: var(--green);
+      background: var(--gold);
+      font-weight: 600;
+    }
+
+    .hero-button.primary:hover {
+      border-color: #e1c58f;
+      background: #e1c58f;
+    }
+
+    .hero-button.secondary {
+      background: rgba(15,28,22,.48);
+    }
+
     .hero-button span {
       font-size: 18px;
     }
 
+    .hero-highlights {
+      width: min(100%, 410px);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.24);
+    }
+
+    .hero-highlight strong,
+    .hero-highlight span {
+      display: block;
+    }
+
+    .hero-highlight strong {
+      margin-bottom: 5px;
+      color: #f0d7a8;
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .hero-highlight span {
+      color: rgba(255,255,255,.7);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
     .hero-caption {
-      margin-top: 35px;
+      margin-top: 22px;
       color: rgba(255,255,255,.36);
       font-size: 10px;
       letter-spacing: 3px;
@@ -219,6 +288,74 @@
       color: #666b63;
       font-size: 13px;
       line-height: 2;
+    }
+
+    .intro-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .intro-highlight {
+      min-width: 0;
+      padding: 13px 10px;
+      background: #f8f6f1;
+    }
+
+    .intro-highlight strong,
+    .intro-highlight span {
+      display: block;
+    }
+
+    .intro-highlight strong {
+      margin-bottom: 5px;
+      color: var(--green);
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .intro-highlight span {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .intro-details {
+      margin-top: 16px;
+      border-top: 1px solid #ece9e1;
+    }
+
+    .intro-details summary {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      color: #8d744c;
+      font-size: 12px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .intro-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .intro-details summary::after {
+      content: "+";
+      margin-left: auto;
+      font-size: 18px;
+    }
+
+    .intro-details[open] summary::after {
+      content: "−";
+    }
+
+    .intro-details p {
+      padding: 0 0 8px;
+      color: #666b63;
+      font-size: 12px;
+      line-height: 1.9;
     }
 
     .intro-note {
@@ -383,6 +520,21 @@
       color: var(--muted);
       font-size: 10px;
       line-height: 1.7;
+    }
+
+    .product-cta {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: #8d744c;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .product-cta span {
+      font-size: 15px;
     }
 
     .service-showcase {
@@ -623,62 +775,6 @@
       line-height: 1.6;
     }
 
-    .cases-grid {
-      display: grid;
-      gap: 12px;
-    }
-
-    .case-card {
-      padding: 14px;
-      background: linear-gradient(180deg, #fff 0%, #f8f5f0 100%);
-      border: 1px solid #ece5dc;
-    }
-
-    .case-visual {
-      height: 180px;
-      margin-bottom: 12px;
-      background:
-        linear-gradient(135deg, rgba(23,37,31,.15), rgba(201,169,110,.08)),
-        #e7e2d8;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .case-visual img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .case-visual::after {
-      content: "";
-      position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(transparent, rgba(23,37,31,.18));
-      pointer-events: none;
-    }
-
-    .case-tag {
-      display: inline-block;
-      margin-bottom: 8px;
-      color: #9b804f;
-      font-size: 10px;
-      letter-spacing: 2px;
-    }
-
-    .case-card h3 {
-      margin-bottom: 6px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .case-card p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
     .advantages {
       color: #fff;
       background: var(--green);
@@ -832,7 +928,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 8px;
+      min-height: 46px;
+      padding: 10px 8px;
       font-size: 12px;
       letter-spacing: 1px;
     }
@@ -849,7 +946,7 @@
     }
 
     footer {
-      padding: 24px max(15px, calc((100vw - 1080px) / 2)) 78px;
+      padding: 24px max(15px, calc((100vw - 1080px) / 2)) calc(78px + env(safe-area-inset-bottom));
       color: #8d9189;
       background: #f1efe9;
       text-align: left;
@@ -859,12 +956,6 @@
 
     footer p + p {
       margin-top: 4px;
-    }
-
-    @media (max-width: 360px) {
-      .hero h1 {
-        font-size: 30px;
-      }
     }
 
     @media (min-width: 700px) {
@@ -925,10 +1016,6 @@
         justify-content: flex-end;
       }
 
-      .cases-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .facility-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
@@ -960,10 +1047,6 @@
 
       .credential-image {
         height: 210px;
-      }
-
-      .case-visual {
-        height: 220px;
       }
 
       .product-grid {
@@ -1002,11 +1085,152 @@
     }
 
     @media (max-width: 699px) {
+      .topbar {
+        height: 58px;
+        padding: 0 16px;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .top-link {
+        padding: 10px 0 10px 10px;
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: min(660px, calc(100svh - 58px));
+        padding: 48px 22px 30px;
+        background-image:
+          linear-gradient(90deg, rgba(13,26,21,.84) 0%, rgba(13,26,21,.72) 55%, rgba(13,26,21,.4) 100%),
+          linear-gradient(0deg, rgba(13,26,21,.24), rgba(13,26,21,.08)),
+          url("北星门帘.jpg");
+        background-position: center, center, 58% center;
+        background-size: cover;
+      }
+
+      .hero-kicker {
+        margin-bottom: 16px;
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      .hero h1 {
+        max-width: 13em;
+        margin-bottom: 14px;
+        font-size: clamp(32px, 9vw, 39px);
+        line-height: 1.4;
+      }
+
+      .hero p {
+        max-width: 34ch;
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 20px;
+      }
+
+      .hero-button {
+        min-width: 0;
+        min-height: 48px;
+        gap: 5px;
+        padding: 10px 7px;
+        font-size: 11px;
+        letter-spacing: .3px;
+      }
+
+      .hero-highlights {
+        gap: 8px;
+        margin-top: 23px;
+        padding-top: 15px;
+      }
+
+      .hero-highlight strong {
+        font-size: 16px;
+      }
+
+      .hero-highlight span {
+        font-size: 9px;
+      }
+
+      .hero-caption {
+        margin-top: 17px;
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .section {
+        padding: 50px 18px;
+      }
+
+      .section-heading {
+        font-size: 22px;
+      }
+
+      .intro-card {
+        padding: 17px;
+      }
+
+      .intro-card > p {
+        font-size: 12px;
+        line-height: 1.9;
+      }
+
+      .intro-highlights {
+        gap: 7px;
+      }
+
+      .intro-highlight {
+        padding: 12px 8px;
+      }
+
+      .intro-highlight strong {
+        font-size: clamp(14px, 4.3vw, 17px);
+      }
+
+      .category-list {
+        gap: 8px;
+        padding: 2px 2px 6px;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+      }
+
+      .category-button {
+        min-height: 44px;
+        padding: 9px 13px;
+        scroll-snap-align: start;
+      }
+
+      .product-grid {
+        gap: 10px;
+      }
+
+      .product-card {
+        padding: 9px;
+      }
+
+      .product-cta {
+        min-height: 44px;
+      }
+
       .sticky-cta {
         position: fixed;
         right: 0;
         bottom: 0;
         left: 0;
+        padding: 9px 16px calc(9px + env(safe-area-inset-bottom));
       }
     }
   </style>
@@ -1025,15 +1249,23 @@
       <a href="#products">产品中心</a>
       <a href="#contact">联系我们</a>
     </nav>
-    <a class="top-link" href="#contact">商务咨询　＋</a>
+    <a class="top-link" href="tel:17692790007" aria-label="拨打北星包装电话咨询">电话咨询　＋</a>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-kicker">BEIXING PACKAGING</div>
-      <h1>以匠心之名<br>塑造包装之美</h1>
-      <p>专注塑料软包装设计与定制，以细致工艺与品质管理，为产品打造恰如其分的包装表达。</p>
-      <a class="hero-button" href="#products">探索产品 <span>→</span></a>
+      <h1>让好产品<br>拥有好包装</h1>
+      <p>专注塑料软包装定制，从袋型、材质到印刷生产，和您一起把包装方案落到实处。</p>
+      <div class="hero-actions">
+        <a class="hero-button primary" href="tel:17692790007">立即电话咨询 <span aria-hidden="true">→</span></a>
+        <a class="hero-button secondary" href="#products">先看精选袋型 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-highlights" aria-label="工厂实力数据">
+        <div class="hero-highlight"><strong>20+年</strong><span>生产销售经验</span></div>
+        <div class="hero-highlight"><strong>10色</strong><span>高速印刷生产</span></div>
+        <div class="hero-highlight"><strong>32台</strong><span>制袋设备</span></div>
+      </div>
       <div class="hero-caption">DESIGN · QUALITY · SERVICE</div>
     </section>
 
@@ -1041,10 +1273,16 @@
       <h2 class="section-heading">关于北星</h2>
       <p class="section-subtitle">用专业与细节，回应每一份包装需求</p>
       <div class="intro-card">
-        <p>
-          东光县北星包装材料有限公司是一家集研发、设计、生产和销售于一体的科技型软包装制造公司，具有20多年的生产销售经验。生产基地位于河北省东光县京南科技示范园区，占地面积18000平方米，公司拥有10万级净化车间10000余平方米。
-公司主要生产各种食品包装、日用品包装、动物食药包装以及具有各种特殊性能的功能性包装制品。拥有4条10色电子轴高速印刷生产线，可变二维码印刷设备2套。为满足不同功能客户的需求，我们配备干式复合生产线2条、无溶剂复合生产线5条。同时为适配各类材质固化、熟化需求我们拥有10个不同温控湿控熟化室10个。配备3台高速分切机，和各种袋型高精度高速制袋机32台，可实现日产30吨卷膜和300万袋，年产值超1.5亿人民币。为保证产品质量公司引进包括检品机、七项色谱仪。色差仪、密封性实验仪、摩擦系数仪、拉力系数仪、薄膜冲击实验仪在内的全套产业检测设备。为了实现绿色环保持续发展，公司首创斥巨资引进全套空气净化设备，实现0排放。同时公司每年将产值的5%作为研发基金，与各大院校合作致力于可回收可降解新材质的研发推广。
-        </p>
+        <p>东光县北星包装材料有限公司集软包装研发、设计、生产与销售于一体，具有20多年生产销售经验，服务食品、日化、动物食药等多类包装需求。</p>
+        <div class="intro-highlights" aria-label="生产基地与产能概况">
+          <div class="intro-highlight"><strong>18,000㎡</strong><span>生产基地</span></div>
+          <div class="intro-highlight"><strong>10万级</strong><span>净化车间</span></div>
+          <div class="intro-highlight"><strong>300万袋/日</strong><span>日产能力</span></div>
+        </div>
+        <details class="intro-details">
+          <summary>查看更多设备与品控能力</summary>
+          <p>生产基地位于河北省东光县京南科技示范园区，占地面积18,000平方米，拥有10万级净化车间10,000余平方米。公司生产食品、日用品、动物食药及功能性软包装产品，配备4条10色电子轴高速印刷生产线、可变二维码印刷设备2套、干式复合生产线2条、无溶剂复合生产线5条、10个不同温控湿控熟化室、3台高速分切机和32台高精度高速制袋机，可实现日产30吨卷膜和300万袋，年产值超1.5亿元。公司配备检品机、七项色谱仪、色差仪、密封性实验仪、摩擦系数仪、拉力系数仪、薄膜冲击实验仪等检测设备；引进空气净化设备，并每年将产值的5%作为研发基金，与院校合作研发可回收、可降解新材质。</p>
+        </details>
         <div class="intro-note">专注包装 · 用心做好每一袋</div>
       </div>
     </section>
@@ -1208,29 +1446,6 @@
       </div>
     </section>
 
-    <section class="section cases">
-      <h2 class="section-heading">应用方案</h2>
-      <p class="section-subtitle">结合不同产品场景，展示软包装应用方向</p>
-      <div class="cases-grid">
-        <article class="case-card">
-          <div class="case-visual">
-            <img src="app-food-pexels-coffee.jpg" alt="咖啡豆、自立袋与手冲器具组成的食品包装参考场景" loading="lazy">
-          </div>
-          <div class="case-tag">食品包装</div>
-          <h3>食品软包装</h3>
-          <p>结合产品保存、使用方式与品牌展示需求，沟通适配的袋型、材质与印刷方案。</p>
-        </article>
-        <article class="case-card">
-          <div class="case-visual">
-            <img src="app-care-pixabay-skincare.jpg" alt="护肤产品与植物构成的日化包装应用参考" loading="lazy">
-          </div>
-          <div class="case-tag">日化包装</div>
-          <h3>日化产品包装</h3>
-          <p>围绕产品特性与陈列场景，匹配包装结构和视觉呈现，兼顾实用与辨识度。</p>
-        </article>
-      </div>
-    </section>
-
     <section class="section products" id="products">
       <div class="product-heading-row">
         <div>
@@ -1296,7 +1511,7 @@
         <p>欢迎联系北星包装，沟通袋型、规格、材质与印刷需求，获取专属包装方案。</p>
         <ul class="contact-meta">
           <li><strong>电 话</strong>：<a href="tel:17692790007">17692790007</a></li>
-          <li><strong>邮 箱</strong>：3274129186@qq.com</li>
+          <li><strong>邮 箱</strong>：<a href="mailto:3274129186@qq.com">3274129186@qq.com</a></li>
           <li><strong>地 址</strong>：河北省沧州市东光县京南科技示范园北星包装材料有限公司</li>
         </ul>
         <div class="contact-row">
@@ -1312,8 +1527,8 @@
   </footer>
 
   <div class="sticky-cta">
-    <a href="tel:17692790007">联系咨询</a>
-    <a href="#products">查看产品</a>
+    <a href="tel:17692790007">电话咨询</a>
+    <a href="#products">浏览袋型</a>
   </div>
 
   <script>
@@ -1359,6 +1574,7 @@
             <div class="product-type">${labels[type]}</div>
             <h3>${product.name}</h3>
             <p>${product.desc}</p>
+            <a class="product-cta" href="tel:17692790007">电话咨询此袋型 <span aria-hidden="true">→</span></a>
           </div>
         </article>
       `).join("");
